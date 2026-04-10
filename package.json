@@ -1,0 +1,16 @@
+{
+  "name": "bcforge-action",
+  "version": "1.0.0",
+  "description": "BCForge GitHub Action — validates AL ID ranges and governance rules",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.9.3"
+  }
+}
