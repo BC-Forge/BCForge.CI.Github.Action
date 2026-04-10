@@ -1,0 +1,50 @@
+name: BCForge Check
+description: >
+  Validates AL object ID ranges and governance rules against your BCForge workspace configuration,
+  then reports the result to the BCForge CI runs history.
+author: BCForge
+
+inputs:
+  api-key:
+    description: >-
+      A BCForge CI API key with scope=ci. Store it as a repository secret and reference it with
+      ${{ secrets.BCFORGE_API_KEY }}.
+    required: true
+  org:
+    description: >-
+      The BCForge organisation UUID. Defaults to the value in .bcforge.json at the repo root.
+      Only set this if you need to override the file.
+    required: false
+    default: ''
+  workspace:
+    description: >-
+      The BCForge workspace UUID. Defaults to the value in .bcforge.json at the repo root.
+      Only set this if you need to override the file.
+    required: false
+    default: ''
+  server-url:
+    description: BCForge server URL. Only change this if you are self-hosting.
+    required: false
+    default: 'https://bcforge.app'
+  fail-on-violations:
+    description: >
+      Exit with a non-zero code (and fail the workflow) if any rule violations or range conflicts
+      are found. Set to "false" to report results without blocking the build.
+    required: false
+    default: 'true'
+
+outputs:
+  status:
+    description: Overall check status — "success", "failure", "warning", or "skipped".
+  rule-violations:
+    description: Number of rule violations found.
+  range-conflicts:
+    description: Number of ID range conflicts found.
+
+runs:
+  using: node20
+  main: dist/index.js
+
+branding:
+  icon: shield
+  color: blue

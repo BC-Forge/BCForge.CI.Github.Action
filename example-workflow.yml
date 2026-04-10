@@ -1,0 +1,22 @@
+name: BCForge Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  bcforge:
+    name: BCForge – ID Ranges & Rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: BCForge Check
+        uses: bcforge/bcforge-action@v1
+        with:
+          api-key: ${{ secrets.BCFORGE_API_KEY }}
+          # org and workspace are read automatically from .bcforge.json in the repo root.
+          # Only set them here if you need to override the file.
+          # fail-on-violations: 'true'   # set to 'false' to report only
