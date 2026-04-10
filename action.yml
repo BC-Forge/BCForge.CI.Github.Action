@@ -1,7 +1,6 @@
 name: BCForge Check
 description: >
-  Validates AL object ID ranges and governance rules against your BCForge workspace configuration,
-  then reports the result to the BCForge CI runs history.
+  Enforcing governance in your Business Central Extensions with BCForge automatically.
 author: BCForge
 
 inputs:
@@ -25,7 +24,7 @@ inputs:
   server-url:
     description: BCForge server URL. Only change this if you are self-hosting.
     required: false
-    default: 'https://bcforge.app'
+    default: 'https://bcforge.net'
   fail-on-violations:
     description: >
       Exit with a non-zero code (and fail the workflow) if any rule violations or range conflicts
