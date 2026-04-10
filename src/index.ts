@@ -482,7 +482,7 @@ async function run(): Promise<void> {
   const orgId = getInput('org') || fileConfig.org || '';
   const wsId = getInput('workspace') || fileConfig.workspace || '';
   const serverUrl =
-    (getInput('server-url') || fileConfig.serverUrl || 'https://bcforge.app').replace(/\/$/, '');
+    (getInput('server-url') || fileConfig.serverUrl || 'https://bcforge.net').replace(/\/$/, '');
   const failOnViolations = getInput('fail-on-violations') !== 'false';
 
   if (!apiKey || !orgId || !wsId) {
