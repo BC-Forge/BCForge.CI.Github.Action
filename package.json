@@ -11,9 +11,12 @@
   "engines": {
     "node": ">=24.11.1"
   },
+  "dependencies": {
+    "esbuild": "^0.24.2"
+  },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "esbuild": "^0.24.2",
     "typescript": "^5.9.3"
   }
 }
+
