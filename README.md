@@ -58,7 +58,7 @@ jobs:
 | `api-key` | **yes** | — | A BCForge CI key (`scope=ci`). Store as a repository secret. |
 | `org` | no | from `.bcforge.json` | BCForge organisation UUID. Only needed to override the config file. |
 | `workspace` | no | from `.bcforge.json` | BCForge workspace UUID. Only needed to override the config file. |
-| `server-url` | no | `https://bcforge.app` | Override if you are self-hosting BCForge. |
+| `server-url` | no | `https://bcforge.net` | Override if you are self-hosting BCForge. |
 | `fail-on-violations` | no | `true` | Set to `false` to report results without failing the workflow. |
 
 ## Outputs
@@ -114,4 +114,4 @@ If you use the BCForge GitHub Action, you can disable the BCForge GitHub App fro
 
 ## License
 
-MIT
+Apache 2.0
